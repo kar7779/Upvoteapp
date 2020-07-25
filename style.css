@@ -1,0 +1,13 @@
+.container {
+  margin: 0 auto;
+  padding: 100px 370px;
+  border-radius: 20px;
+}
+
+.media {
+  padding: 12px;
+  border-radius: 12px;
+}
+.blue-border {
+  border: 8px solid blue;
+}
