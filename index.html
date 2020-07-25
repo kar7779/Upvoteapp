@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+    />
+    <link rel="stylesheet" href="../public/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2 class="title has-text-centered dividing-header">{{message}}</h2>
+      <div class="section container">
+        <article
+          v-for="submission in SortedSubmissions"
+          v-bind:key="submission.id"
+          class="media"
+          v-bind:class="{ 'blue-border': submission.votes >= 20 }"
+        >
+          <submission-component
+            v-bind:submission="submission"
+            v-bind:submissions="SortedSubmissions"
+          >
+          </submission-component>
+        </article>
+      </div>
+    </div>
+    <script src="./seed.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
